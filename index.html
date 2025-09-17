@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Utility Billing App</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+        h2 { color: #333; }
+        form, .resident { background: #fff; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+        input { margin: 5px; padding: 5px; width: 200px; }
+        button { padding: 5px 10px; }
+        hr { border: none; border-top: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h2>Add Resident</h2>
+    <form method="POST" action="https://agk4.pythonanywhere.com/add_resident">
+        <input name="name" placeholder="Name" required>
+        <input name="flat" placeholder="Flat No." required>
+        <input name="contact" placeholder="Contact" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>Generate Bill</h2>
+    <form method="POST" action="https://agk4.pythonanywhere.com/generate_bill/1">
+        <input name="month" placeholder="Month (e.g. Sep 2025)" required>
+        <input name="electricity" placeholder="Electricity" required>
+        <input name="water" placeholder="Water" required>
+        <input name="gas" placeholder="Gas" required>
+        <input name="maintenance" placeholder="Maintenance" required>
+        <button type="submit">Generate</button>
+    </form>
+
+    <h2>View Bills</h2>
+    <a href="https://agk4.pythonanywhere.com/bills/1" target="_blank">View Resident #1 Bills</a>
+</body>
+</html>
